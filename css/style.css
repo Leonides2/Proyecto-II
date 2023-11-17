@@ -1,0 +1,191 @@
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #F9FBE7; ;
+  }
+  
+  #header {
+    display: flex;
+    height: 150px;
+    width: 1fr;
+    padding: 10px 40px;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    row-gap: 10px;
+    flex-shrink: 0;
+    align-self: stretch;
+    flex-wrap: wrap;
+    background: #ead84e;
+  }
+  
+  
+  .separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #EF6C00;
+    min-height: 15vh;
+  
+  }
+  
+  #contact-form{
+    width: 460px; 
+    height: auto;
+    margin: 80px auto;
+    border-radius: 10px;  
+    padding-top: 30px;
+    padding-bottom: 20px;  
+    background-color: #F9FBE7; 
+    padding-left: 30px;
+  }
+  
+  
+  #gallery{
+    display: flex;
+    gap: 20%;
+    margin-inline-start: 5%;
+    margin-inline-end: 5%;
+  }
+  #contact{
+    display: flex;
+    justify-content: center;
+    background: #F9FBE7;
+  }
+  
+  #banner{
+    display: flex;
+    flex-flow: column;
+    text-align: left;
+    min-height: 40vh;
+  }
+  
+  #gallery-title{
+    color: #F9FBE7;
+    font-size: 60px;
+    text-align: center;
+  }
+  
+  #services-title{
+    color: #F9FBE7;
+    font-size: 50px;
+    text-align: center;
+  }
+  #banner {
+    margin-left: 20px;
+  }
+  
+  #logo {
+    height: 100px;
+    width: auto;
+    background-size: contain;
+  }
+  
+  .horizontal-center {
+    display: flex;
+    justify-content: center;
+  }
+  
+  #services {
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+  
+    margin-top: 20px;
+    margin-bottom: 20px;
+  
+    gap: 20px;
+  }
+  
+  .service-card {
+    height: 300px;
+  
+    border-style: solid;
+    border-radius: 15px;
+    border-width: 2px;
+  
+    border-color: black;
+  
+    display: flex;
+    flex-direction: column;
+  
+    justify-content: start;
+    align-items: center;
+  }
+  
+  .service-card-image {
+    height: 100%;
+    width: 100%;
+  
+    
+    border-radius: 15px;
+  }
+  
+  .gallery {
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  
+  .img-object {
+    display: flex;
+    height: 400px;
+    width: 600px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    overflow: clip;
+  }
+  
+  .img-object-image {
+    height: 100%;
+    width: auto;
+    border-radius: 15px;
+  }
+  
+  
+  #footer {
+    width: 100%;
+    min-height: 150px;
+  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  
+    background-color: #6D4C41;
+  }
+  
+  #footer p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    color: #F9FBE7;
+  }
+  
+  span{
+    color: #df2935; 
+  }
+  
+  .aviso{
+    font:bold;
+  }
+  
+  
+  
+  @media (max-width: 950px) {
+    #services {
+      grid-template-columns: 300px;
+    }
+  
+    #header {
+      flex-direction: row;
+      justify-content: center;
+  
+      height: auto;
+    }
+  
+    #footer {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
