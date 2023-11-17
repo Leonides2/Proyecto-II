@@ -19,13 +19,13 @@ function SetUp(){
       description.innerText = responseA["description"];
 
       responseA["products"].forEach((e) => {
-        let newCard = CreateCardProducts(e["url"]);
+        let newCard = CreateCardProducts(e["url"], e["id"]);
 
         gallery.append(newCard);
       });
 
       responseA["services"].forEach((e) => {
-        let newCard = CreateCardServices(e["url"], e["title"], e["content"]);
+        let newCard = CreateCardServices(e["url"], e["title"], e["content"], e["id"]);
 
         services.append(newCard);
       })
@@ -41,7 +41,7 @@ function SetUp(){
       console.log(response);
     } )
 
-    function CreateCardProducts(imageSource) {
+    function CreateCardProducts(imageSource,id) {
       let newCard = document.createElement("div");
       newCard.classList.add("img-object");
   
@@ -50,11 +50,17 @@ function SetUp(){
       imageElement.src = imageSource;
   
       newCard.append(imageElement);
+
+      let footer = document.createElement("h3");
+      newCard.classList.add("img-object-text");
+      footer.innerText = id;
+
+      newCard.append(footer);
   
       return newCard;
     }
 
-    function CreateCardServices(imageSource, header, content) {
+    function CreateCardServices(imageSource, header, content, id) {
       let newCard = document.createElement("div");
   
       newCard.classList.add("service-card");
@@ -79,6 +85,12 @@ function SetUp(){
       contentElement.innerText = content;
   
       textWrapper.append(contentElement);
+
+      let footer = document.createElement("h3");
+      newCard.classList.add("service-card-text-wrapper");
+      footer.innerText = id;
+
+      newCard.append(footer);
   
   
       return newCard;
@@ -89,7 +101,45 @@ function SetUp(){
 
 
 
-  const getValueInput = () =>{
-    let inputValue = document.getElementById("domTextElement").value; 
+  const putCompany = () =>{
+    let inputValue = document.getElementById("nombre").value; 
     document.getElementById("valueInput").innerHTML = inputValue; 
+
+    fetch("http://localhost:3000/api/company/1", {
+      method: 'PUT',
+      body: JSON.stringify({
+      title : inputValue
+    })
+  })
   }
+
+  const deleteCompany = () =>{
+    let inputValue = document.getElementById("idDelete").value; 
+    document.getElementById("valueInput").innerHTML.charAt = inputValue; 
+    let url = "http://localhost:3000/api/company/"
+
+    fetch(url + inputValue, {
+      method: 'delete',
+    })
+  }
+
+  const deleteProduct = () =>{
+    let inputValue = document.getElementById("idDeleteProduct").value; 
+    document.getElementById("valueInput").innerHTML.charAt = inputValue; 
+    let url = "http://localhost:3000/api/product/"
+
+    fetch(url + inputValue, {
+      method: 'delete',
+    })
+  }
+
+  const deleteService = () =>{
+    let inputValue = document.getElementById("idDeleteService").value; 
+    document.getElementById("valueInput").innerHTML.charAt = inputValue; 
+    let url = "http://localhost:3000/api/service/"
+
+    fetch(url + inputValue, {
+      method: 'delete',
+    })
+  }
+

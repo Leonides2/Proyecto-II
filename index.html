@@ -21,6 +21,24 @@
       <!--Logo y nombre de la empresa-->
       <img id="logo" alt="logo" />
       <h1 id="Title"></h1>
+      
+      <label for="nombre">Nombre de la empresa: </label><input type="text" id="nombre" > 
+      
+      <button type="button"  onclick="putCompany()"> 
+          Guardar cambios
+      </button> 
+      
+      <p id="valueInput"></p> 
+
+      <label for="idDelete">ID de empresa a eliminar: </label><input type="text" id="idDelete" > 
+    
+      <button type="button"  onclick="deleteCompany()"> 
+          Eliminar
+      </button> 
+      
+      <p id="valueInput"></p>
+
+
     </header>
 
 
@@ -45,17 +63,46 @@
         </div>
       </div>
 
+      <div class="separator">   
+
+        <label for="idDeleteService">ID del servicio a eliminar: </label><input type="text" id="idDeleteService" > 
+    
+        <button type="button"  onclick="deleteService()"> 
+            Eliminar
+        </button> 
+        
+        <p id="valueInput"></p>
+       </div>
+
       <div class="separator"> 
         <h1 id="gallery-title">Galería de Productos</h1>
        </div>
 
       <div class="gallery" style="overflow-x:scroll;" id="gallery">
         <!--Aqui van las imagenes de la galeria-->
-      </div>
+
+       
 
       <div class="separator"> 
+
+        
+        </div>
+
+
         <h1 id="gallery-title">Formulario de Contacto</h1>
        </div>
+
+       <div class="separator">   
+
+        <label for="idDeleteProduct">ID de producto a eliminar: </label><input type="text" id="idDeleteProduct" > 
+    
+        <button type="button"  onclick="deleteProduct()"> 
+            Eliminar
+        </button> 
+        
+        <p id="valueInput"></p>
+       </div>
+
 
 
       <div id="contact">
